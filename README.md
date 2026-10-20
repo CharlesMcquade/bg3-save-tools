@@ -1,10 +1,19 @@
-# bg3-save-tools
+# BG3 Journal Reader
 
-A tested procedure for reading a *Baldur's Gate 3* save's real campaign state: active party, every quest's current objective and **`QuestVisitedSteps`**, the ordered trail of quest steps you actually triggered. Use it to answer "what did I choose last playthrough?" or "has this already happened in my run?" without loading the game.
+**bg3-save-tools**: a tested procedure for reading a *Baldur's Gate 3* save's real campaign state: active party, every quest's current objective and **`QuestVisitedSteps`**, the ordered trail of quest steps you actually triggered. Use it to answer "what did I choose last playthrough?" or "has this already happened in my run?" without loading the game.
 
 > Unofficial fan project. Not affiliated with or endorsed by Larian Studios. Uses Norbyte's open-source [lslib / Divine](https://github.com/Norbyte/lslib). Tested with Divine v1.20.4 on PC (Steam) saves from game version 4.1.1, and may change with future patches. Contains no game code or assets.
 
 This repo has no script. Divine already does the unpacking well, so the value here is the exact invocations, the save structure and the traps between them.
+
+## Why this exists
+
+*Baldur's Gate 3* remembers far more than its journal shows. Hundreds of hours in, or starting a second run, it's hard to answer simple questions: did I side with them last time? Did that scene already fire? Why is this quest still open? Each quest's `QuestVisitedSteps` trail in the save answers them, step by step.
+
+- **Where am I?** Every quest's current objective and which ones the game considers finished.
+- **What did I do last time?** Read the final save of an earlier run and compare its quest trails with your current run's choice points.
+- **Has this already happened?** Check whether a step is in the trail before you reload or go looking for it.
+- **What's next?** Give the journal JSON and `SKILL.md` to an AI agent. The save supplies your exact position; the agent maps it to [bg3.wiki](https://bg3.wiki) and suggests the next step at the spoiler level you choose. This repo contains no walkthrough.
 
 ## What a save tells you
 
